@@ -9,13 +9,13 @@ cd docker-proxy
 ```
 Adjust the [nginx.conf](https://docs.docker.com/samples/library/nginx/) and the html/ directory to suit your needs.
 
-Build the *daycohost/proxy:1.0* docker image:
+Build the **olafrv/proxy:1.0** docker image:
 
 ```bash
 . build.sh
 ```
 
-Deploy the *proxy* service stack (compose):
+Deploy the **proxy** service stack (compose):
 
 ```bash
 . run.sh
@@ -23,5 +23,5 @@ Deploy the *proxy* service stack (compose):
 
 ## Usage
 
-  * Adjust the *nginx.conf* to suit your needs.
-  * Attach or defined the *proxy* network to your containers (docker) or services (docker-compose).
+  * Adjust the **nginx.conf** to suit your needs.
+  * Attach or defined the **proxy** network to your containers (docker) or services (docker-compose).
