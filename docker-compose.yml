@@ -1,16 +1,16 @@
 version: '2'
 services:
   web:
-    image: nginx
+    image: daycohost/proxy:1.0
     container_name: proxy
     restart: always
     networks:
       - proxy
     ports:
       - 8080:8080
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./html:/usr/share/nginx/html:ro
+#    volumes:
+#      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+#      - ./html:/usr/share/nginx/html:ro
 
 networks:
   proxy:
