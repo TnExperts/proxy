@@ -2,7 +2,6 @@
 
 if [ "$1" == "reload" ]
 then
-	#!/bin/bash
 	docker container exec proxy nginx -t \
 		&& docker container exec proxy nginx -s reload
 elif [ "$1" == "destroy" ]
@@ -17,3 +16,4 @@ else
 	fi
 	docker-compose up -d
 fi
+
