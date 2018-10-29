@@ -22,6 +22,12 @@ Build (destroy) the **olafrv/proxy:1.0** docker image:
 ```bash
 . build.sh [destroy]
 ```
+**NOTE:** If your are using *docker-compose* and not **run.sh** (e.g. Portainer, Docker CLI by your own),
+you must create first the **proxy** network to avoid errors during composing:
+
+```bash
+docker network create --driver=bridge --subnet=172.18.0.0/16 --gateway=172.18.0.1 proxy
+```
 
 Run (reload nginx configuration, destroy) the **proxy** service stack (compose):
 
