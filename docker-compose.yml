@@ -1,7 +1,7 @@
 version: '2'
 services:
   web:
-    image: olafrv/docker-proxy:1.0
+    image: olafrv/proxy:1.0
     container_name: proxy
     restart: always
     networks:
