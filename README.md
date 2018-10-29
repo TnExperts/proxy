@@ -31,5 +31,17 @@ Run (reload nginx configuration, destroy) the **proxy** service stack (compose):
 
 ## Usage
 
-  * Adjust the **nginx.conf** to suit your needs.
-  * Attach or defined the **proxy** network to your containers (docker) or services (docker-compose).
+1. Adjust the **nginx.conf** to suit your needs.
+
+2. Attach the **proxy** network to your containers (docker run --network) or...
+
+3. Define the **proxy** network for your service stack (docker-compose.yml):
+
+```
+networks:
+  proxy:
+    external:
+      name: proxy
+
+```
+
