@@ -12,8 +12,8 @@ After installing git, docker and docker-compose:
 Clone the git repository locally:
 
 ```bash
-git clone https://github.com/olafrv/docker-proxy.git
-cd docker-proxy
+git clone https://github.com/olafrv/proxy.git
+cd proxy
 ```
 Adjust the [nginx.conf](https://docs.docker.com/samples/library/nginx/) and the html/ directory to suit your needs.
 
