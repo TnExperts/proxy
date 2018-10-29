@@ -1,4 +1,4 @@
-# docker-proxy
+# proxy
 Nginx Proxy Containarized Web Applications
 
 ## Installation
