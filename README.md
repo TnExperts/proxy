@@ -15,14 +15,25 @@ Clone the git repository locally:
 git clone https://github.com/olafrv/proxy.git
 cd proxy
 ```
-Adjust the [nginx.conf](https://docs.docker.com/samples/library/nginx/) and the html/ directory to suit your needs.
+Adjust the [nginx.conf](https://docs.docker.com/samples/library/nginx/) 
+and the html/ directory to suit your needs.
 
 Build (destroy) the **olafrv/proxy:1.0** docker image:
 
 ```bash
 . build.sh [destroy]
 ```
-**NOTE:** If your are using *docker-compose* and not **run.sh** (e.g. Portainer, Docker CLI by your own),
+
+Please see Docker Network documentation to integrate other containers with the proxy:
+
+* docker: https://docs.docker.com/compose/networking/
+* docker-compose: https://docs.docker.com/engine/reference/run/#network-settings
+
+
+**REMEMBER:** If your are using *docker-compose* and each container's name is a DNS record, 
+so any container can access each other using their names.
+
+If your are using *docker-compose* and not **run.sh** (e.g. Portainer, Docker CLI by your own),
 you must create first the **proxy** network to avoid errors during composing:
 
 ```bash
