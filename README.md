@@ -48,7 +48,13 @@ Run (reload nginx configuration, destroy) the **proxy** service stack (compose):
 
 ## Usage
 
-1. Adjust the **nginx.conf** to suit your needs.
+1. Adjust the **nginx.conf** to proxy your application relative URL (e.g. /app):
+
+```
+location /app {
+  ...
+}
+```
 
 2. Attach the **proxy** network to your containers (docker run --network) or...
 
