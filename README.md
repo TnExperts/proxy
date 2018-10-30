@@ -1,11 +1,11 @@
 # proxy
 Nginx Proxy Containarized Web Applications
 
-# Source Code
+## Source Code
 
 Clone from: https://github.com/olafrv/proxy
 
-# Docker Image
+## Docker Image
 
 Pull from: https://hub.docker.com/r/olafrv/proxy
 
