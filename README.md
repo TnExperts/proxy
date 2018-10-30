@@ -56,7 +56,7 @@ Run (reload nginx configuration, destroy) the **proxy** service stack (compose):
 
 ## Usage
 
-1. Adjust the **nginx.conf** to proxy your application relative URL (e.g. /app):
+1. Adjust (Uncomment) the **nginx.conf** to proxy your application relative URL (e.g. /app):
 
 ```
 location /app {
