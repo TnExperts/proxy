@@ -30,7 +30,7 @@ Please see Docker Network documentation to integrate other containers with the p
 * docker-compose: https://docs.docker.com/engine/reference/run/#network-settings
 
 
-**REMEMBER:** If your are using *docker-compose* and each container's name is a DNS record, 
+**REMEMBER:** If your are using *docker-compose* each container's name is a DNS record, 
 so any container can access each other using their names.
 
 If your are using *docker-compose* and not **run.sh** (e.g. Portainer, Docker CLI by your own),
