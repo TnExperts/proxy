@@ -1,6 +1,14 @@
 # proxy
 Nginx Proxy Containarized Web Applications
 
+# Source Code
+
+Clone from: https://github.com/olafrv/proxy
+
+# Docker Image
+
+Pull from: https://hub.docker.com/r/olafrv/proxy
+
 ## Installation
 
 After installing git, docker and docker-compose:
