@@ -1,7 +1,7 @@
 version: '2'
 services:
   web:
-    image: olafrv/proxy:1.0
+    image: olafrv/proxy:lastest
     container_name: proxy
     restart: always
     networks:
