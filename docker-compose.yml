@@ -8,12 +8,15 @@ services:
       - proxy
     ports:
       - 80:80
-#    volumes:
-#      - ./nginx.conf:/etc/nginx/nginx.conf:ro
-#      - ./html:/usr/share/nginx/html:ro
+      - 443:443
+    volumes:
+      - /var/lib/docker-compose/proxy/nginx.conf:/etc/nginx/nginx.conf:ro
+#      - /var/lib/docker-compose/proxy/html:/usr/share/nginx/html:ro
+      - /var/lib/docker-compose/proxy/letsencrypt/etc:/etc/letsencrypt:rw
+      - /var/lib/docker-compose/proxy/letsencrypt/lib:/var/lib/letsencrypt:rw
+      - /var/lib/docker-compose/proxy/letsencrypt/log:/var/log/letsencrypt:rw
 
 networks:
   proxy:
     external:
       name: proxy
-  
