@@ -109,3 +109,6 @@ Build (destroy) the **olafrv/proxy:latest** docker image using one of the follow
 docker-compose build
 ```
 
+## Backup
+
+You must fully backup the **/var/lib/docker-compose/proxy** directory.
