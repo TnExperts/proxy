@@ -46,7 +46,17 @@ docker network create --driver=bridge --subnet=172.29.4.0/24 --gateway=172.29.4.
 1. Adjust the [**nginx.conf**](https://www.nginx.com/resources/wiki/start/topics/examples/full/)
 and the html/ directory to suit your needs. 
 
-2. Create the the **nginx-app.conf** and add your application relative URL (e.g. /app):
+2. Create the the **nginx-app.conf** and add your HTTP (INSECURE) application relative URL (e.g. /app):
+
+```
+# FORCE SSL PER LOCATION
+
+location /app/ {
+	return 301 https://$server_name$request_uri;
+}
+```
+
+3. Create the the **nginx-app-ssl.conf** and add your HTTPS (SECURE) application relative URL (e.g. /app):
 
 ```
 ###
@@ -66,9 +76,8 @@ location /app {
 }
 ```
 
-3. Attach the **composed** network to your containers (docker run --network) or...
-
-4. Define the **composed** network for your service stack (docker-compose.yml):
+4. Attach the **composed** network to your containers (docker run --network) or
+define the **composed** network for your service stack (docker-compose.yml):
 
 ```
 networks:
