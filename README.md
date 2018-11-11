@@ -1,13 +1,8 @@
 # olafrv/proxy
 Nginx Proxy Containarized Web Applications
 
-## Source Code
-
-Clone from: https://github.com/olafrv/proxy
-
-## Docker Image
-
-Pull from: https://hub.docker.com/r/olafrv/proxy
+ * Source: https://github.com/olafrv/proxy
+ * Image: https://hub.docker.com/r/olafrv/proxy
 
 ## Installation
 
@@ -55,8 +50,15 @@ and the html/ directory to suit your needs.
 # Help: https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/
 ##
 location /app {
-        proxy_set_header Host $server_name;
-        proxy_pass http://app/; 
+	# NGINX IP ADDRESS SEEN BY USERS 
+	# IN THE BROWSER (FRONTEND)
+	proxy_set_header Host $server_name;
+	# APPLICATION CONTAINER (BACKEND)
+	# *** ONLY WORKS WHEN USING DOCKER-COMPOSE
+	# *** TO CREATE THE limesurvey_web CONTAINER
+	# *** BECAUSE limesurvey_web SHOULD BE CREATED
+	# *** AS INTERNAL DNS RECORD AT DOCKER LEVEL
+	proxy_pass http://app/; 
 }
 ```
 
