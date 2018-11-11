@@ -39,14 +39,16 @@ Please see Docker Network documentation to integrate other containers with the p
 * docker: https://docs.docker.com/compose/networking/
 * docker-compose: https://docs.docker.com/engine/reference/run/#network-settings
 
-**REMEMBER:** If your are using *docker-compose* each container's name is a DNS record, 
-so any container can access each other using their names.
+**REMEMBER:** If your are using *docker-compose* each container's name is a DNS record
+if you are using a used defined network (not the default bridge), so any container can
+access each other using their names.
 
 If your are using *docker-compose* instead of **proxy.sh up** (e.g. Portainer, Docker CLI 
-by your own), you must create first the **proxy** network to avoid errors during composing:
+by your own), you must create a user defined network, here is named **composed** network
+to avoid errors during composing:
 
 ```bash
-docker network create --driver=bridge --subnet=172.18.0.0/16 --gateway=172.18.0.1 proxy
+docker network create --driver=bridge --subnet=172.18.0.0/16 --gateway=172.18.0.1 composed
 ```
 
 Run (reload nginx configuration, compose up/down) the **proxy** service stack:
@@ -78,15 +80,15 @@ location /app {
 }
 ```
 
-3. Attach the **proxy** network to your containers (docker run --network) or...
+3. Attach the **composed** network to your containers (docker run --network) or...
 
-4. Define the **proxy** network for your service stack (docker-compose.yml):
+4. Define the **composed** network for your service stack (docker-compose.yml):
 
 ```
 networks:
-  proxy:
+  composed:
     external:
-      name: proxy
+      name: composed
 
 ```
 
