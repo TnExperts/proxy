@@ -8,8 +8,9 @@ cd $WORKDIR || exit 1
 
 function proxy_reload
 {
-	docker container exec proxy nginx -t \
-		&& docker container exec proxy nginx -s reload
+#	docker container exec proxy nginx -t \
+#		&& docker container exec proxy nginx -s reload
+	docker restart proxy
 }
 
 if [ "$1" == "reload" ]
