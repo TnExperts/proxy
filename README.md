@@ -4,7 +4,7 @@ Nginx Proxy Containarized Web Applications
  * Source: https://github.com/olafrv/proxy
  * Images: 
    * https://hub.docker.com/r/olafrv/proxy
-   * https://www.nginx.com/resources/wiki/start/topics/examples/full/
+   * https://docs.docker.com/samples/library/nginx/
  * Certbot (Let's Encrypt):
    * https://certbot.eff.org/lets-encrypt/debianstretch-other
 
