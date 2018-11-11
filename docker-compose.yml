@@ -11,6 +11,8 @@ services:
       - 443:443
     volumes:
       - /var/lib/docker-compose/proxy/nginx.conf:/etc/nginx/nginx.conf:ro
+      - /var/lib/docker-compose/proxy/nginx-apps.conf:/etc/nginx/nginx-apps.conf:ro
+# Let's Encrypts need rw access to create public challenge folder
 #      - /var/lib/docker-compose/proxy/html:/usr/share/nginx/html:ro
       - /var/lib/docker-compose/proxy/letsencrypt/etc:/etc/letsencrypt:rw
       - /var/lib/docker-compose/proxy/letsencrypt/lib:/var/lib/letsencrypt:rw
