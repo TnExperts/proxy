@@ -2,7 +2,11 @@
 Nginx Proxy Containarized Web Applications
 
  * Source: https://github.com/olafrv/proxy
- * Image: https://hub.docker.com/r/olafrv/proxy
+ * Images: 
+   * https://hub.docker.com/r/olafrv/proxy
+   * https://www.nginx.com/resources/wiki/start/topics/examples/full/
+ * Certbot (Let's Encrypt):
+   * https://certbot.eff.org/lets-encrypt/debianstretch-other
 
 ## Installation
 
@@ -39,8 +43,8 @@ to avoid errors during composing:
 ```bash
 docker network create --driver=bridge --subnet=172.29.4.0/24 --gateway=172.29.4.1 composed
 ```
-1. Adjust the [**nginx.conf**](https://docs.docker.com/samples/library/nginx/)
-and the html/ directory to suit your needs.
+1. Adjust the [**nginx.conf**](https://www.nginx.com/resources/wiki/start/topics/examples/full/)
+and the html/ directory to suit your needs. 
 
 2. Create the the **nginx-app.conf** and add your application relative URL (e.g. /app):
 
