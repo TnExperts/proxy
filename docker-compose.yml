@@ -2,10 +2,13 @@ version: '2'
 services:
   web:
     image: olafrv/proxy:latest
+    build:
+     context: .
+     dockerfile: Dockerfile
     container_name: proxy
-    restart: always
+    restart: unless-stopped
     networks:
-      - proxy
+      - composed
     ports:
       - 80:80
       - 443:443
@@ -19,6 +22,6 @@ services:
       - /var/lib/docker-compose/proxy/letsencrypt/log:/var/log/letsencrypt:rw
 
 networks:
-  proxy:
+  composed:
     external:
-      name: proxy
+      name: composed
