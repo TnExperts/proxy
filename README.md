@@ -55,10 +55,10 @@ location /app {
 	proxy_set_header Host $server_name;
 	# APPLICATION CONTAINER (BACKEND)
 	# *** ONLY WORKS WHEN USING DOCKER-COMPOSE
-	# *** TO CREATE THE limesurvey_web CONTAINER
+	# *** TO CREATE THE app_container CONTAINER
 	# *** BECAUSE limesurvey_web SHOULD BE CREATED
 	# *** AS INTERNAL DNS RECORD AT DOCKER LEVEL
-	proxy_pass http://app/; 
+	proxy_pass http://app_container/; 
 }
 ```
 
