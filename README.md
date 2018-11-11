@@ -1,4 +1,4 @@
-# proxy
+# olafrv/proxy
 Nginx Proxy Containarized Web Applications
 
 ## Source Code
@@ -25,14 +25,8 @@ cd /var/lib/docker-compose
 git clone https://github.com/olafrv/proxy.git
 cd proxy
 ```
-Adjust the [nginx.conf](https://docs.docker.com/samples/library/nginx/) 
-and the html/ directory to suit your needs.
 
-Build (destroy) the **olafrv/proxy:latest** docker image:
-
-```bash
-. build.sh [destroy]
-```
+## Configuration
 
 Please see Docker Network documentation to integrate other containers with the proxy:
 
@@ -50,23 +44,9 @@ to avoid errors during composing:
 ```bash
 docker network create --driver=bridge --subnet=172.18.0.0/16 --gateway=172.18.0.1 composed
 ```
+1. Adjust the [**nginx.conf**](https://docs.docker.com/samples/library/nginx/)
+and the html/ directory to suit your needs.
 
-Run (reload nginx configuration, compose up/down) the **proxy** service stack:
-
-```bash
-. proxy.sh [reload|up|down]
-```
-
-Generate/Renew SSL certificate using Let's Encrypt (Certbot script). A cronjob
-is created in the Docker host (not inside the proxy container) to auto renew the 
-proxy SSL certificate:
-
-```bash
-. proxy.sh [newssl|renewssl]
-```
-## Usage
-
-1. Adjust (Uncomment) the **nginx.conf**.
 2. Create the the **nginx-app.conf** and add your application relative URL (e.g. /app):
 
 ```
@@ -90,5 +70,36 @@ networks:
     external:
       name: composed
 
+```
+
+## Run
+
+### Basics
+
+Run (reload nginx configuration, compose up/down) the **proxy** service stack:
+
+```bash
+. proxy.sh [reload|up|down]
+```
+
+### SSL Certificates
+
+Generate/Renew SSL certificate using Let's Encrypt (Certbot script). A cronjob
+is created in the Docker host (not inside the proxy container) to auto renew the 
+proxy SSL certificate:
+
+```bash
+. proxy.sh [newssl|renewssl]
+```
+
+## Build (Manually)
+
+Build (destroy) the **olafrv/proxy:latest** docker image using one of the following commands:
+
+```bash
+# docker
+. build.sh [destroy]
+# docker-compose
+docker-compose build
 ```
 
