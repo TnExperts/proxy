@@ -37,7 +37,7 @@ by your own), you must create a user defined network, here is named **composed**
 to avoid errors during composing:
 
 ```bash
-docker network create --driver=bridge --subnet=172.18.0.0/16 --gateway=172.18.0.1 composed
+docker network create --driver=bridge --subnet=172.29.4.0/24 --gateway=172.29.4.1 composed
 ```
 1. Adjust the [**nginx.conf**](https://docs.docker.com/samples/library/nginx/)
 and the html/ directory to suit your needs.
