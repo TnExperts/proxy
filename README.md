@@ -1,7 +1,8 @@
 # olafrv/proxy
 Nginx Proxy Containarized Web Applications
 
- * Source: https://github.com/olafrv/proxy
+ * Source: 
+   * https://github.com/olafrv/proxy
  * Images: 
    * https://hub.docker.com/r/olafrv/proxy
    * https://docs.docker.com/samples/library/nginx/
@@ -49,7 +50,12 @@ and the html/ directory to suit your needs.
 2. Create the the **nginx-app.conf** and add your HTTP (INSECURE) application relative URL (e.g. /app):
 
 ```
-# FORCE SSL PER LOCATION
+###
+# APP INSECURE (HTTP) LOCATION -> CONTAINER (PROXIED)
+# Help: https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/
+##
+
+# FORCE (HTTPS) SSL PER LOCATION
 
 location /app/ {
 	return 301 https://$server_name$request_uri;
@@ -60,7 +66,7 @@ location /app/ {
 
 ```
 ###
-# APP LOCATION -> CONTAINER (PROXIED)
+# APP SECURE (HTTPS) LOCATION -> CONTAINER (PROXIED)
 # Help: https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/
 ##
 location /app {
@@ -91,7 +97,7 @@ networks:
 
 ### Basics
 
-Run (reload nginx configuration, compose up/down) the **proxy** service stack:
+Reload nginx configuration and compose up/down the **proxy** service stack:
 
 ```bash
 . proxy.sh [reload|up|down]
@@ -121,3 +127,4 @@ docker-compose build
 ## Backup
 
 You must fully backup the **/var/lib/docker-compose/proxy** directory.
+
